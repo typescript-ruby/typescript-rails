@@ -7,6 +7,7 @@ require 'typescript/rails/version'
 Gem::Specification.new do |gem|
   gem.name          = "typescript-rails"
   gem.version       = Typescript::Rails::VERSION
+  gem.platform      = Gem::Platform::RUBY
   gem.authors       = ["Klaus Zanders"]
   gem.email         = ["klaus.zanders@gmail.com"]
   gem.description   = %q{Adds Typescript to the Rails Asset pipeline}
