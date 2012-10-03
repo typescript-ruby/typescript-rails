@@ -5,6 +5,7 @@ rvm:
  - ree
  - jruby
  - rbx
+script: bundle exec rake test
 matrix:
   allow_failures:
     - rvm: rbx 
