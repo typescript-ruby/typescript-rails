@@ -3,7 +3,8 @@ require 'rails/engine'
 module Typescript
   module Rails
     class Engine < ::Rails::Engine
-      config.app_generators.javascript_engine :typescript
+      # For now, let's not be the default generator ...
+      # config.app_generators.javascript_engine :ts
     end
   end
 end
