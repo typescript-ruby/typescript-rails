@@ -1,6 +1,8 @@
-# Typescript::Rails
+# TypeScript for Rails 
 
-TODO: Write a gem description
+This is a wrapper for the [TypeScript](http://www.typescriptlang.org/) JavaScript superset language by Microsoft.
+
+It enables you to use the `.ts` extension in the Asset Pipeline and also in ActionView Templates.
 
 ## Installation
 
@@ -12,13 +14,9 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install typescript-rails
-
 ## Usage
 
-TODO: Write usage instructions here
+Just add a `.js.ts` file in your `app/assets/javascripts` directory and include it just like you are used to do.
 
 ## Contributing
 
