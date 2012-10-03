@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
 require 'typescript/rails/version'
 
 Gem::Specification.new do |gem|
@@ -10,9 +11,14 @@ Gem::Specification.new do |gem|
   gem.email         = ["klaus.zanders@gmail.com"]
   gem.description   = %q{Adds Typescript to the Rails Asset pipeline}
   gem.summary       = %q{Adds Typescript to the Rails Asset pipeline}
-  gem.homepage      = ""
+  gem.homepage      = "http://github.com/klaustopher/typescript-rails"
+
+  gem.rubyforge_project = "typescript-rails"
 
   gem.add_runtime_dependency 'typescript'
+  gem.add_runtime_dependency 'tilt',      '~> 1.3'
+  gem.add_runtime_dependency 'railties'
+  gem.add_runtime_dependency 'sprockets-rails', '~> 1.0'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
