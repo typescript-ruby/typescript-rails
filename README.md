@@ -1,4 +1,4 @@
-# TypeScript for Rails 
+# TypeScript for Rails ![Travis Build State](https://travis-ci.org/klaustopher/typescript-rails.png)
 
 This is a wrapper for the [TypeScript](http://www.typescriptlang.org/) JavaScript superset language by Microsoft.
 
