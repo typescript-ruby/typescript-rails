@@ -4,6 +4,7 @@ This is a wrapper for the [TypeScript](http://www.typescriptlang.org/) JavaScrip
 
 It enables you to use the `.ts` extension in the Asset Pipeline and also in ActionView Templates.
 
+The credit for the overall structure and the tests goes to the people that wrote the [coffee-rails](https://github.com/rails/coffee-rails) Gem, since I shamelessly copy&pasted some of their code.
 ## Installation
 
 Add this line to your application's Gemfile:
