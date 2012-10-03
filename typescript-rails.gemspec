@@ -19,7 +19,6 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'typescript'
   gem.add_runtime_dependency 'tilt',      '~> 1.3'
   gem.add_runtime_dependency 'railties'
-  gem.add_runtime_dependency 'sprockets-rails'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
