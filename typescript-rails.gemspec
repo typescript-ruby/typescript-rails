@@ -16,7 +16,7 @@ Gem::Specification.new do |gem|
 
   gem.rubyforge_project = "typescript-rails"
 
-  gem.add_runtime_dependency 'typescript'
+  gem.add_runtime_dependency 'typescript', '~> 0.1.1'
   gem.add_runtime_dependency 'tilt',      '~> 1.3'
   gem.add_runtime_dependency 'railties'
 
