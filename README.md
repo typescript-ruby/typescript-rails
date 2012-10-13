@@ -1,5 +1,7 @@
 # TypeScript for Rails ![Travis Build State](https://travis-ci.org/klaustopher/typescript-rails.png)
 
+**I know that there is a bug that doesn't allow you to use any `/// reference`-Statements. I'm going to fix this asap, when the RailsRumble is over and I have some time.**
+
 This is a wrapper for the [TypeScript](http://www.typescriptlang.org/) JavaScript superset language by Microsoft.
 
 It enables you to use the `.ts` extension in the Asset Pipeline and also in ActionView Templates.
