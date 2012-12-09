@@ -41,7 +41,7 @@ module Typescript
       end
 
       def evaluate(scope, locals, &block)
-        @output ||= TypeScript.compile(data, options)
+        @output ||= TypeScript::Node.compile(data)
       end
 
       def allows_script?
@@ -51,13 +51,13 @@ module Typescript
 
     class TemplateHandler
 
-       def self.erb_handler
+      def self.erb_handler
         @@erb_handler ||= ActionView::Template.registered_template_handler(:erb)
       end
 
       def self.call(template)
         compiled_source = erb_handler.call(template)
-        "TypeScript.compile(begin;#{compiled_source};end)"
+        "TypeScript::Node.compile(begin;#{compiled_source};end)"
       end
     end
   end

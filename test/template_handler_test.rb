@@ -21,6 +21,6 @@ class TemplateHandlerTest < ActiveSupport::TestCase
   test "typescript views are served as javascript" do
     get "/site/index.js"
 
-    assert_match "var x = 5;\n", last_response.body
+    assert_match "var x = 5;\r\n", last_response.body
   end
 end
