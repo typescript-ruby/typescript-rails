@@ -1,7 +1,5 @@
 # TypeScript for Rails ![Travis Build State](https://travis-ci.org/klaustopher/typescript-rails.png)
 
-**I know that there is a bug that doesn't allow you to use any `/// reference`-Statements. I'm going to fix this asap, when the RailsRumble is over and I have some time.**
-
 This is a wrapper for the [TypeScript](http://www.typescriptlang.org/) JavaScript superset language by Microsoft.
 
 It enables you to use the `.ts` extension in the Asset Pipeline and also in ActionView Templates.
@@ -9,6 +7,18 @@ It enables you to use the `.ts` extension in the Asset Pipeline and also in Acti
 This gem uses the [typescript-ruby](https://github.com/TimothyKlim/typescript-ruby) library by Timothy Klim for all the nasty "passing things to JS and parsing it. 
 
 The credit for the overall structure and the tests goes to the people that wrote the [coffee-rails](https://github.com/rails/coffee-rails) Gem, since I shamelessly copy&pasted some of their code.
+
+## Requirements
+
+The current version requires that [node.js](http://nodejs.org/) is
+installed on the system.
+
+The requirement for node is tested upon starting the application. If
+the node command is not available you get the following error message:
+
+```
+typescript-node requires node command, but it's not found. Please install it. Set TS_NODE environmental variable If you want to use node command in non-standard path.
+```
 
 ## Installation
 
@@ -21,7 +31,6 @@ And then execute:
     $ bundle
 
 ## Usage
-
 Just add a `.js.ts` file in your `app/assets/javascripts` directory and include it just like you are used to do.
 
 ## Contributing
