@@ -16,7 +16,7 @@ Gem::Specification.new do |gem|
 
   gem.rubyforge_project = "typescript-rails"
 
-  gem.add_runtime_dependency 'typescript', '~> 0.1.1'
+  gem.add_runtime_dependency 'typescript-node', '~> 0.0'
   gem.add_runtime_dependency 'tilt',      '~> 1.3'
   gem.add_runtime_dependency 'railties'
 
@@ -24,4 +24,6 @@ Gem::Specification.new do |gem|
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
+
+  gem.required_ruby_version = ">= 1.9.2"
 end
