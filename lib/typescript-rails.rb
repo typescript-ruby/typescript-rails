@@ -1,5 +1,3 @@
-require "open3"
-
 require "typescript-node"
 
 require "typescript/rails/railtie"
