@@ -77,7 +77,7 @@ module Typescript
     def self.replace_relative_references(ts_path, source)
       ts_dir = File.dirname(File.expand_path(ts_path))
       escaped_dir = ts_dir.gsub(/["\\]/, '\\\\\&') # "\"" => "\\\"", '\\' => '\\\\'
-      source.gsub(%r!(^///\s*<reference\s+path=")([^/"][^"]+)("\s*/>)!, '\1' + File.join(escaped_dir, '\2') + '\3')
+      source.gsub(%r!(^///\s*<reference\s+path=")([^"]+)("\s*/>\s*)!) {|m| $1 + File.join(escaped_dir, $2) + $3 }
     end
   end
 end
