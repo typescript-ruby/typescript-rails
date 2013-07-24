@@ -26,17 +26,17 @@ class TemplateHandlerTest < ActiveSupport::TestCase
     get "/site/index.js"
 
     s = last_response.body
-    assert_match "var x = 5;", last_response.body
+    assert_match /var x = 5;\s*/, last_response.body
   end
 
   test "<reference> to other .ts file works" do
     get "/site/ref1_2.js"
-    assert_match "var f = function (x, y) {\n    return x + y;\n};\nf(1, 2);\n", last_response.body
+    assert_match /var f = function \(x, y\) {\s*return x \+ y;\s*};\s*f\(1, 2\);\s*/, last_response.body
   end
 
   test "<reference> to other .d.ts file works" do
     get "/site/ref2_2.js"
-    assert_match "f(1, 2);\n", last_response.body
+    assert_match /f\(1, 2\);\s*/, last_response.body
   end
 
 end
