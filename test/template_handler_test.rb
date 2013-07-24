@@ -31,7 +31,7 @@ class TemplateHandlerTest < ActiveSupport::TestCase
 
   test "<reference> to other .ts file works" do
     get "/site/ref1_2.js"
-    assert_match /var f = function \(x, y\) {\s*return x \+ y;\s*};\s*f\(1, 2\);\s*/, last_response.body
+    assert_match /var f = function \(x, y\) \{\s*return x \+ y;\s*\};\s*f\(1, 2\);\s*/, last_response.body
   end
 
   test "<reference> to other .d.ts file works" do
