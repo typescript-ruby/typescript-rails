@@ -42,7 +42,7 @@ class TemplateHandlerTest < ActiveSupport::TestCase
 
   test "<reference> to multiple .ts files works" do
     get "/site/ref3_1.js"
-    assert_match /var f1 = function \(\) \{\s\};\s*var f2 = function \(\) \{\s*\};\s*f1\(\);\s*f2\(\);\s*/,
+    assert_match /var f1 = function \(\) \{\s*\};\s*var f2 = function \(\) \{\s*\};\s*f1\(\);\s*f2\(\);\s*/,
                  last_response.body
   end
 
