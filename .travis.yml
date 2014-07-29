@@ -4,6 +4,8 @@ rvm:
  - ree
  - jruby
  - rbx
+notifications:
+  email: false
 script: bundle exec rake test
 matrix:
   allow_failures:
