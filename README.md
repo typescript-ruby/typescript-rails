@@ -1,14 +1,5 @@
 # TypeScript for Rails [![Build Status](https://travis-ci.org/typescript-rails/typescript-rails.svg?branch=master)](https://travis-ci.org/typescript-rails/typescript-rails)
 
----
-
-**Looking for a new maintainer**: Since I am no longer working with TS in my day to day life, and there are some major changes
-[coming up](http://blogs.msdn.com/b/typescript/archive/2013/10/17/typescript-and-the-road-to-1-0.aspx), I'm looking for someone 
-who wants to take over development of this gem
-
----
-
-
 This is a wrapper for the [TypeScript](http://www.typescriptlang.org/) JavaScript superset language by Microsoft.
 
 It enables you to use the `.ts` extension in the Asset Pipeline and also in ActionView Templates.
@@ -42,6 +33,7 @@ And then execute:
     $ bundle
 
 ## Usage
+
 Just add a `.js.ts` file in your `app/assets/javascripts` directory and include it just like you are used to do.
 
 ## Contributing
@@ -51,3 +43,12 @@ Just add a `.js.ts` file in your `app/assets/javascripts` directory and include 
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Maintainers
+
+FUJI Goro <gfuji@cpan.org>
+
+## Authors
+
+Klaus Zanders <klaus.zanders@gmail.com>
+
