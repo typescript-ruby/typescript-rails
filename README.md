@@ -1,4 +1,4 @@
-# TypeScript for Rails [![Build Status](https://travis-ci.org/typescript-rails/typescript-rails.svg?branch=master](https://travis-ci.org/typescript-rails/typescript-rails)
+# TypeScript for Rails [![Build Status](https://travis-ci.org/typescript-rails/typescript-rails.svg?branch=master)](https://travis-ci.org/typescript-rails/typescript-rails)
 
 ---
 
