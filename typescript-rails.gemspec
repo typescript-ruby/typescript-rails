@@ -8,16 +8,16 @@ Gem::Specification.new do |gem|
   gem.name          = "typescript-rails"
   gem.version       = Typescript::Rails::VERSION
   gem.platform      = Gem::Platform::RUBY
-  gem.authors       = ["Klaus Zanders"]
-  gem.email         = ["klaus.zanders@gmail.com"]
+  gem.authors       = ["FUJI, Goro", "Klaus Zanders"]
+  gem.email         = ["gfuji@cpan.org", "klaus.zanders@gmail.com"]
   gem.description   = %q{Adds Typescript to the Rails Asset pipeline}
   gem.summary       = %q{Adds Typescript to the Rails Asset pipeline}
-  gem.homepage      = "http://github.com/klaustopher/typescript-rails"
+  gem.homepage      = "https://github.com/typescript-rails/typescript-rails"
 
   gem.rubyforge_project = "typescript-rails"
 
-  gem.add_runtime_dependency 'typescript-node', '~> 0.0'
-  gem.add_runtime_dependency 'tilt',      '~> 1.3'
+  gem.add_runtime_dependency 'typescript-node'
+  gem.add_runtime_dependency 'tilt'
   gem.add_runtime_dependency 'railties'
 
   gem.files         = `git ls-files`.split($/)
@@ -25,5 +25,5 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.required_ruby_version = ">= 1.9.2"
+  gem.required_ruby_version = ">= 1.9.3"
 end
