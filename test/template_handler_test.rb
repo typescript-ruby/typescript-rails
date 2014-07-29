@@ -13,6 +13,7 @@ DummyApp.draw do
   get "site/ref1_2"
   get "site/ref2_1"
   get "site/ref2_2"
+  get "site/ref3_1"
 end
 
 class TemplateHandlerTest < ActiveSupport::TestCase
@@ -25,17 +26,24 @@ class TemplateHandlerTest < ActiveSupport::TestCase
   test "typescript views are served as javascript" do
     get "/site/index.js"
 
-    assert_match "var x = 5;\r\n", last_response.body
+    s = last_response.body
+    assert_match /var x = 5;\s*/, last_response.body
   end
 
   test "<reference> to other .ts file works" do
     get "/site/ref1_2.js"
-    assert_match "var f = function (x, y) {\r\n    return x + y;\r\n};\r\nf(1, 2);\r\n", last_response.body
+    assert_match /var f = function \(x, y\) \{\s*return x \+ y;\s*\};\s*f\(1, 2\);\s*/, last_response.body
   end
 
   test "<reference> to other .d.ts file works" do
     get "/site/ref2_2.js"
-    assert_match "f(1, 2);\r\n", last_response.body
+    assert_match /f\(1, 2\);\s*/, last_response.body
+  end
+
+  test "<reference> to multiple .ts files works" do
+    get "/site/ref3_1.js"
+    assert_match /var f1 = function \(\) \{\s*\};\s*var f2 = function \(\) \{\s*\};\s*f1\(\);\s*f2\(\);\s*/,
+                 last_response.body
   end
 
 end
