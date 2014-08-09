@@ -14,7 +14,7 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{Adds Typescript to the Rails Asset pipeline}
   gem.homepage      = "https://github.com/typescript-ruby/typescript-rails"
 
-  gem.add_runtime_dependency 'typescript-node'
+  gem.add_runtime_dependency 'typescript-node', '>= 1.1.0'
   gem.add_runtime_dependency 'tilt'
   gem.add_runtime_dependency 'railties'
 

@@ -1,3 +1,4 @@
+require 'typescript-node'
 require 'tilt'
 
 module Typescript
@@ -16,12 +17,12 @@ module Typescript
         @@default_bare = value
       end
 
-      # DEPRECATED
+      # @deprecated
       def self.default_no_wrap
         @@default_bare
       end
 
-      # DEPRECATED
+      # @deprecated
       def self.default_no_wrap=(value)
         @@default_bare = value
       end
@@ -42,7 +43,8 @@ module Typescript
 
       def evaluate(scope, locals, &block)
         source = Typescript::Rails.replace_relative_references(file, data)
-        @output ||= TypeScript::Node.compile(source)
+        # TODO: employs source-maps
+        @output ||= TypeScript::Node.compile(source, '--target', 'ES5')
       end
 
       def allows_script?
@@ -63,7 +65,8 @@ module Typescript
         TypeScript::Node.compile(
           Typescript::Rails.replace_relative_references(
             '#{escaped_path}', (begin;#{compiled_source};end)
-          )
+          ),
+          '--target', 'ES5'
         )
         EOS
       end

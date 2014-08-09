@@ -8,12 +8,13 @@ end
 
 DummyApp = ActionDispatch::Routing::RouteSet.new
 DummyApp.draw do
-  get "site/index"
-  get "site/ref1_1"
-  get "site/ref1_2"
-  get "site/ref2_1"
-  get "site/ref2_2"
-  get "site/ref3_1"
+  get 'site/index'
+  get 'site/ref1_1'
+  get 'site/ref1_2'
+  get 'site/ref2_1'
+  get 'site/ref2_2'
+  get 'site/ref3_1'
+  get 'site/es5'
 end
 
 class TemplateHandlerTest < ActiveSupport::TestCase
@@ -52,4 +53,8 @@ class TemplateHandlerTest < ActiveSupport::TestCase
         source
   end
 
+  test 'ES5 features' do
+    get '/site/es5.js'
+    assert_equal 200, last_response.status
+  end
 end
