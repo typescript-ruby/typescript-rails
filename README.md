@@ -1,11 +1,11 @@
-# TypeScript for Rails [![Build Status](https://travis-ci.org/typescript-rails/typescript-rails.svg?branch=master)](https://travis-ci.org/typescript-rails/typescript-rails)
+# TypeScript for Rails [![Build Status](https://travis-ci.org/typescript-ruby/typescript-rails.svg?branch=master)](https://travis-ci.org/typescript-ruby/typescript-rails)
 
 This is a wrapper for the [TypeScript](http://www.typescriptlang.org/) JavaScript superset language by Microsoft.
 
 It enables you to use the `.ts` extension in the Asset Pipeline and also in ActionView Templates.
 
 This gem uses the
-[typescript-node-ruby](https://github.com/tkawachi/typescript-node-ruby)
+[typescript-node-ruby](https://github.com/typescript-ruby/typescript-node-ruby)
 library by KAWACHI Takashi for the typescript parsing with node js.
 
 The credit for the overall structure and the tests goes to the people that wrote the [coffee-rails](https://github.com/rails/coffee-rails) Gem, since I shamelessly copy&pasted some of their code.
