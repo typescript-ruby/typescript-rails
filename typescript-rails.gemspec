@@ -12,9 +12,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["gfuji@cpan.org", "klaus.zanders@gmail.com"]
   gem.description   = %q{Adds Typescript to the Rails Asset pipeline}
   gem.summary       = %q{Adds Typescript to the Rails Asset pipeline}
-  gem.homepage      = "https://github.com/typescript-rails/typescript-rails"
-
-  gem.rubyforge_project = "typescript-rails"
+  gem.homepage      = "https://github.com/typescript-ruby/typescript-rails"
 
   gem.add_runtime_dependency 'typescript-node'
   gem.add_runtime_dependency 'tilt'
