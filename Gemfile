@@ -4,3 +4,4 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'rails', '~> 4.0'
+gem 'minitest-power_assert'

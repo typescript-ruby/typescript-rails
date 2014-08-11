@@ -3,7 +3,7 @@ ENV["RAILS_ENV"] = "test"
 
 require 'rails'
 require "rails/test_help"
-
+require 'minitest-power_assert'
 
 def copy_routes
   routes = File.expand_path("../support/routes.rb", __FILE__)
