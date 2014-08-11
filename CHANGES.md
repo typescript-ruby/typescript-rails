@@ -1,3 +1,7 @@
+## v0.4.1 2014-08-12 00:05:17+0900
+
+* Fix a runtime error
+
 ## v0.4.0 2014-08-11 23:04:20+0900
 
 * Set `--noImplicitAny` by default to tsc compiler
