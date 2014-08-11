@@ -9,6 +9,7 @@ class AssetsTest < ActiveSupport::TestCase
     require "sprockets/railtie"
 
     @app = Class.new(Rails::Application)
+    @app.config.eager_load = false
     @app.config.active_support.deprecation = :stderr
     @app.config.assets.enabled = true
     @app.config.assets.cache_store = [ :file_store, "#{tmp_path}/cache" ]

@@ -1,3 +1,3 @@
-var f2 = function() {
+var f2 = function(): void {
 
 };
