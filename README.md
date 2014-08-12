@@ -1,6 +1,6 @@
-# TypeScript for Rails [![Build Status](https://travis-ci.org/typescript-ruby/typescript-rails.svg?branch=master)](https://travis-ci.org/typescript-ruby/typescript-rails)
+# TypeScript for Rails [![Build Status](https://travis-ci.org/typescript-ruby/typescript-rails.svg?branch=master)](https://travis-ci.org/typescript-ruby/typescript-rails) [![Coverage Status](https://coveralls.io/repos/typescript-ruby/typescript-rails/badge.png)](https://coveralls.io/r/typescript-ruby/typescript-rails)
 
-This is a wrapper for the [TypeScript](http://www.typescriptlang.org/) JavaScript superset language by Microsoft.
+This is a wrapper for the [TypeScript](http://www.typescriptlang.org/), JavaScript superset language by Microsoft.
 
 It enables you to use the `.ts` extension in the Asset Pipeline and also in ActionView Templates.
 

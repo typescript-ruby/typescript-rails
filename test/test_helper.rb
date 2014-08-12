@@ -1,4 +1,17 @@
-# Configure Rails Envinronment
+# Configure coveralls environment
+
+require 'coveralls'
+require 'simplecov'
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+    SimpleCov::Formatter::HTMLFormatter,
+    Coveralls::SimpleCov::Formatter
+]
+SimpleCov.start do
+  add_filter '.bundle/'
+end
+
+# Configure Rails environment
 ENV["RAILS_ENV"] = "test"
 
 require 'rails'
