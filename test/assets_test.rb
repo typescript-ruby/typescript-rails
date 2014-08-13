@@ -12,10 +12,12 @@ class AssetsTest < ActiveSupport::TestCase
     FileUtils.mkdir_p tmp_path
 
     @app = Class.new(Rails::Application)
+
     @app.config.eager_load = false
     @app.config.active_support.deprecation = :stderr
-    @app.config.assets.enabled = true
-    @app.config.assets.cache_store = [ :file_store, "#{tmp_path}/cache" ]
+    @app.config.assets.configure do |env|
+      env.cache = ActiveSupport::Cache.lookup_store(:memory_store)
+    end
     @app.config.assets.paths << "#{File.dirname(__FILE__)}/fixtures/assets"
     @app.paths["log"] = "#{tmp_path}/log/test.log"
     @app.initialize!
