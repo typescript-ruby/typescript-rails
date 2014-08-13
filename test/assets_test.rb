@@ -1,36 +1,45 @@
 require 'test_helper'
 require 'typescript-rails'
 
+require "action_controller/railtie"
+require "sprockets/railtie"
+
+
 class AssetsTest < ActiveSupport::TestCase
+  include Minitest::PowerAssert::Assertions
+
   def setup
-    require "rails"
-    require 'tzinfo'
-    require "action_controller/railtie"
-    require "sprockets/railtie"
+    FileUtils.mkdir_p tmp_path
 
     @app = Class.new(Rails::Application)
     @app.config.eager_load = false
     @app.config.active_support.deprecation = :stderr
     @app.config.assets.enabled = true
     @app.config.assets.cache_store = [ :file_store, "#{tmp_path}/cache" ]
+    @app.config.assets.paths << "#{File.dirname(__FILE__)}/fixtures/assets"
     @app.paths["log"] = "#{tmp_path}/log/test.log"
     @app.initialize!
   end
 
   def teardown
-    FileUtils.rm_rf "#{tmp_path}/cache"
-    FileUtils.rm_rf "#{tmp_path}/log"
-    #File.delete "#{tmp_path}/typescript.js"
-  end
-
-  test "typescript.js is included in Sprockets environment" do
-    @app.assets["typescript"].write_to("#{tmp_path}/typescript.js")
-
-    assert_match "/lib/assets/javascripts/typescript.js.erb", @app.assets["typescript"].pathname.to_s
-    assert_match "var TypeScript", File.open("#{tmp_path}/typescript.js").read
+    FileUtils.rm_rf tmp_path
   end
 
   def tmp_path
     "#{File.dirname(__FILE__)}/tmp"
+  end
+
+  def assets
+    @app.assets
+  end
+
+  test "typescript.js is included in Sprockets environment" do
+    assert { assets["typescript"].pathname.to_s.end_with?('/lib/assets/javascripts/typescript.js.erb') }
+    assert { assets["typescript"].body.include?('var TypeScript') }
+  end
+
+  test "assets .js.ts is compiled from TypeScript to JavaScript" do
+    assert { assets["javascripts/hello"].present? }
+    assert { assets["javascripts/hello"].body.include?('var s = "Hello, world!";') }
   end
 end

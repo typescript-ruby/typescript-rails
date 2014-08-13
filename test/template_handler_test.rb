@@ -3,7 +3,7 @@ require 'action_controller'
 require 'typescript-rails'
 
 class SiteController < ActionController::Base
-  self.view_paths = File.expand_path("../support", __FILE__)
+  self.view_paths = File.expand_path("../fixtures", __FILE__)
 end
 
 DummyApp = ActionDispatch::Routing::RouteSet.new
