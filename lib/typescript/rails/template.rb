@@ -22,7 +22,19 @@ class Typescript::Rails::Template < ::Tilt::Template
   end
 
   def evaluate(scope, locals, &block)
+    begin
     @output ||= ::Typescript::Rails::Compiler.compile(file, data)
+    
+    # This is hacky as hell but it works for now
+    rescue RuntimeError => e
+      if e.message =~ /error\sTS\d+:\s/ # Got TypeScript error (probably)?
+        # Replace path to tempfile in error with path to asset file
+        # TODO: Fix hacky regexp
+        raise RuntimeError, e.message.gsub(/^\/.*\.ts\(/, "#{file}(")
+      else
+        raise e
+      end
+    end
   end
 
   # @override
