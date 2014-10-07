@@ -39,7 +39,6 @@ module Typescript::Rails::Compiler
   end
 
   self.default_options = [
-      '--target', 'ES5',
-      '--noImplicitAny'
+      '--target', 'ES5'
   ]
 end
