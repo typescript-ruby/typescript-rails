@@ -22,7 +22,7 @@ module Typescript::Rails::Compiler
         if l.starts_with?('///') && !(m = %r!^///\s*<reference\s+path="([^"]+)"\s*/>\s*!.match(l)).nil?
           l = l.sub(m.captures[0], File.join(escaped_dir, m.captures[0]))
         end
-        output = output + l + $/
+        output = output + l
       end
 
       output
