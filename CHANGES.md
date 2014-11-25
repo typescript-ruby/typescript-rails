@@ -1,3 +1,8 @@
+## v0.4.2 2014-11-26 07:30:12+0900
+
+* Fix newlines (#15)
+* Mention to `default_options` in README (#18)
+
 ## v0.4.1 2014-08-12 00:05:17+0900
 
 * Fix a runtime error
