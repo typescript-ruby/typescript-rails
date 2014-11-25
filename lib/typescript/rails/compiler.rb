@@ -17,13 +17,12 @@ module Typescript::Rails::Compiler
 
       # Why don't we just use gsub? Because it display odd behavior with File.join on Ruby 2.0
       # So we go the long way around.
-      output = ''
-      source.each_line do |l|
+      output = (source.each_line.map do |l|
         if l.starts_with?('///') && !(m = %r!^///\s*<reference\s+path="([^"]+)"\s*/>\s*!.match(l)).nil?
           l = l.sub(m.captures[0], File.join(escaped_dir, m.captures[0]))
         end
-        output = output + l + $/
-      end
+        next l
+      end).join
 
       output
     end
