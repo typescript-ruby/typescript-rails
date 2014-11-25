@@ -36,6 +36,14 @@ And then execute:
 
 Just add a `.js.ts` file in your `app/assets/javascripts` directory and include it just like you are used to do.
 
+Configurations:
+
+```
+# Its defaults are `--target ES5 --noImplicitAny`.
+Typescript::Rails::Compiler.default_options = [ ... ]
+```
+
+
 ## Contributing
 
 1. Fork it
