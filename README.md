@@ -43,6 +43,11 @@ Configurations:
 Typescript::Rails::Compiler.default_options = [ ... ]
 ```
 
+To use typescript template generator, add to your config file:
+
+```
+config.app_generators.javascript_engine :typescript
+```
 
 ## Contributing
 
