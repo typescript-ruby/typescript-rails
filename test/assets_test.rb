@@ -42,6 +42,7 @@ class AssetsTest < ActiveSupport::TestCase
 
   test "assets .js.ts is compiled from TypeScript to JavaScript" do
     assert { assets["javascripts/hello"].present? }
+    assert { assets["javascripts/hello"].send(:dependency_paths).map(&:pathname).map(&:to_s).include? File.expand_path("#{File.dirname(__FILE__)}/fixtures/assets/javascripts/included.ts") }
     assert { assets["javascripts/hello"].body.include?('var s = "Hello, world!";') }
   end
 end
