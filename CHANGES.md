@@ -1,3 +1,7 @@
+## v0.5.0 2015-03-25 10:46:29+0900
+
+* Expire root TS cache in response to change in referenced `.ts` files (#24)
+
 ## v0.4.2 2014-11-26 07:30:12+0900
 
 * Fix newlines (#15)
