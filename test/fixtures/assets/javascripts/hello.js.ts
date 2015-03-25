@@ -1,2 +1,3 @@
+/// <reference path="reference.ts" />
 var s: string = "Hello, world!";
-console.log(s)
+log_to_console(s);

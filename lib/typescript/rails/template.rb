@@ -21,8 +21,8 @@ class Typescript::Rails::Template < ::Tilt::Template
     end
   end
 
-  def evaluate(scope, locals, &block)
-    @output ||= ::Typescript::Rails::Compiler.compile(file, data)
+  def evaluate(context, locals, &block)
+    @output ||= ::Typescript::Rails::Compiler.compile(file, data, context)
   end
 
   # @override
