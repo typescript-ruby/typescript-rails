@@ -1,3 +1,7 @@
+## v0.6.0 2015-07-06 22:36:25+0300
+
+* Updated version to 0.6.0 for using Typescript source 1.4.1.3
+
 ## v0.5.0 2015-03-25 10:46:29+0900
 
 * Expire root TS cache in response to change in referenced `.ts` files (#24)
