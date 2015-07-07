@@ -1,4 +1,4 @@
-require 'test_helper'
+require File.join(File.dirname(__FILE__), 'test_helper.rb')
 require 'typescript-rails'
 
 require "action_controller/railtie"
@@ -35,14 +35,14 @@ class AssetsTest < ActiveSupport::TestCase
     @app.assets
   end
 
-  test "typescript.js is included in Sprockets environment" do
-    assert { assets["typescript"].pathname.to_s.end_with?('/lib/assets/javascripts/typescript.js.erb') }
-    assert { assets["typescript"].body.include?('var TypeScript') }
+  test 'typescript.js is included in Sprockets environment' do
+    assert { assets["typescript"].filename.to_s.end_with?('/lib/assets/javascripts/typescript.js.erb') }
+    assert { assets["typescript"].source.include?('var ts;') }
   end
 
-  test "assets .js.ts is compiled from TypeScript to JavaScript" do
+  test 'assets .js.ts is compiled from TypeScript to JavaScript' do
     assert { assets["javascripts/hello"].present? }
-    assert { assets["javascripts/hello"].send(:dependency_paths).map(&:pathname).map(&:to_s).include? File.expand_path("#{File.dirname(__FILE__)}/fixtures/assets/javascripts/included.ts") }
-    assert { assets["javascripts/hello"].body.include?('var s = "Hello, world!";') }
+    assert { assets["javascripts/hello"].source.include?('var log_to_console = function (x) {') }
+    assert { assets["javascripts/hello"].source.include?('var s = "Hello, world!";') }
   end
 end
