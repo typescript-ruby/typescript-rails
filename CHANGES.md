@@ -1,4 +1,4 @@
-+## v0.6.1 2015-07-27 21:52:50+0300
+## v0.6.1 2015-07-27 21:52:50+0300
 
 * Now code raises exception with correct file name when TS compilation error occurs
 
