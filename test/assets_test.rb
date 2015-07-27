@@ -1,8 +1,8 @@
 require File.join(File.dirname(__FILE__), 'test_helper.rb')
 require 'typescript-rails'
 
-require "action_controller/railtie"
-require "sprockets/railtie"
+require 'action_controller/railtie'
+require 'sprockets/railtie'
 
 
 class AssetsTest < ActiveSupport::TestCase
@@ -19,7 +19,7 @@ class AssetsTest < ActiveSupport::TestCase
       env.cache = ActiveSupport::Cache.lookup_store(:memory_store)
     end
     @app.config.assets.paths << "#{File.dirname(__FILE__)}/fixtures/assets"
-    @app.paths["log"] = "#{tmp_path}/log/test.log"
+    @app.paths['log'] = "#{tmp_path}/log/test.log"
     @app.initialize!
   end
 
@@ -41,8 +41,8 @@ class AssetsTest < ActiveSupport::TestCase
   end
 
   test 'assets .js.ts is compiled from TypeScript to JavaScript' do
-    assert { assets["javascripts/hello"].present? }
-    assert { assets["javascripts/hello"].source.include?('var log_to_console = function (x) {') }
-    assert { assets["javascripts/hello"].source.include?('var s = "Hello, world!";') }
+    assert { assets['javascripts/hello'].present? }
+    assert { assets['javascripts/hello'].source.include?('var log_to_console = function (x) {') }
+    assert { assets['javascripts/hello'].source.include?('var s = "Hello, world!";') }
   end
 end
