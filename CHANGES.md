@@ -1,3 +1,7 @@
++## v0.6.1 2015-07-27 21:52:50+0300
+
+* Now code raises exception with correct file name when TS compilation error occurs
+
 ## v0.6.0 2015-07-06 22:36:25+0300
 
 * Updated version to 0.6.0 for using Typescript source 1.4.1.3
