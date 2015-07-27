@@ -57,7 +57,11 @@ module Typescript::Rails::Compiler
         end
       end
       s = replace_relative_references(ts_path, source)
-      ::TypeScript::Node.compile(s, *default_options, *options)
+      begin
+        ::TypeScript::Node.compile(s, *default_options, *options)
+      rescue Exception => e
+        raise "Typescript error in file '#{ts_path}':\n#{e.message}"
+      end
     end
 
   end
