@@ -9,5 +9,6 @@ group :test do
   gem 'minitest-power_assert'
   gem 'coveralls'
   gem 'simplecov'
+  gem 'tzinfo-data', platforms: [:mingw, :mswin]
 end
 
