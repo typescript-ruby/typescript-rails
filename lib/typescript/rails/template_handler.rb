@@ -18,4 +18,5 @@ end
 
 ActiveSupport.on_load(:action_view) do
   ActionView::Template.register_template_handler :ts, Typescript::Rails::TemplateHandler
+  ActionView::Template.register_template_handler :tsx, Typescript::Rails::TemplateHandler
 end

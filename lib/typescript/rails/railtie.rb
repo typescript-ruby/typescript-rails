@@ -6,6 +6,7 @@ class Typescript::Rails::Railtie < ::Rails::Railtie
       require 'typescript/rails/template'
       require 'sprockets'
       Sprockets.register_engine '.ts', Typescript::Rails::Template
+      Sprockets.register_engine '.tsx', Typescript::Rails::Template
     end
   end
 end
