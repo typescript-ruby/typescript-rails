@@ -41,8 +41,8 @@ class AssetsTest < ActiveSupport::TestCase
   end
 
   test 'assets .js.ts is compiled from TypeScript to JavaScript' do
-    assert { assets['javascripts/hello'].present? }
-    assert { assets['javascripts/hello'].source.include?('var log_to_console = function (x) {') }
-    assert { assets['javascripts/hello'].source.include?('var s = "Hello, world!";') }
+    assert { assets['javascripts/hello.js'].present? }
+    assert { assets['javascripts/hello.js'].source.include?('var log_to_console = function (x) {') }
+    assert { assets['javascripts/hello.js'].source.include?('var s = "Hello, world!";') }
   end
 end
