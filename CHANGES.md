@@ -1,3 +1,7 @@
+## v0.6.2.1 2016-07-26 18:27:00+0300
+
+* Added Sprockets 4 support. Thanks to @mihai-dinculescu
+
 ## v0.6.2 2015-07-27 21:52:50+0300
 
 * Updated to TS v1.6.2
