@@ -3,7 +3,7 @@
 require 'coveralls'
 require 'simplecov'
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new[
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
     SimpleCov::Formatter::HTMLFormatter,
     Coveralls::SimpleCov::Formatter
 ]
