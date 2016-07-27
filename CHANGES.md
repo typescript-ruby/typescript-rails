@@ -1,3 +1,7 @@
+## v0.6.2.3 2016-07-27 17:25:00+0300
+
+* Fixed incorrect value of register_mime_type (@mihai-dinculescu)
+
 ## v0.6.2.1 2016-07-26 18:27:00+0300
 
 * Added Sprockets 4 support. Thanks to @mihai-dinculescu
