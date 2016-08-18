@@ -9,10 +9,11 @@ class Typescript::Rails::Railtie < ::Rails::Railtie
 
       if Sprockets.respond_to?(:register_engine)
         Sprockets.register_engine '.ts', Typescript::Rails::Template, silence_deprecation: true
+        Sprockets.register_engine '.tsx', Typescript::Rails::Template, silence_deprecation: true
       end
 
       if Sprockets.respond_to?(:register_transformer)
-        Sprockets.register_mime_type 'text/typescript', extensions: ['.ts']
+        Sprockets.register_mime_type 'text/typescript', extensions: ['.ts', '.tsx']
         Sprockets.register_transformer 'text/typescript', 'application/javascript', Typescript::Rails::Transformer
       end
     end
