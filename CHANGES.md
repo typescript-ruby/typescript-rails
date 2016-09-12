@@ -1,3 +1,7 @@
+## v0.6.2.4 2016-09-12 13:48:00+0300
+
+* Add typescript template generator (not defaulted). Thanks to @mjfaga
+
 ## v0.6.2.3 2016-07-27 17:25:00+0300
 
 * Fixed incorrect value of register_mime_type (@mihai-dinculescu)
