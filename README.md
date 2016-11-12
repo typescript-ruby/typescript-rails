@@ -32,6 +32,10 @@ And then execute:
 
     $ bundle
 
+Note: We need to install (if we haven't already) the Typescript definitions, [more info](https://github.com/DefinitelyTyped/DefinitelyTyped#how-do-i-get-them). 
+
+    npm install --save-dev @types/node
+
 ## Usage
 
 Just add a `.js.ts` file in your `app/assets/javascripts` directory and include it just like you are used to do.
@@ -39,9 +43,15 @@ Just add a `.js.ts` file in your `app/assets/javascripts` directory and include 
 Configurations:
 
 ```
-# Its defaults are `--target ES5 --noImplicitAny`.
-Typescript::Rails::Compiler.default_options = [ ... ]
+Typescript::Rails::Compiler.default_options = %w(--target ES5 --noImplicitAny --module commonjs)
 ```
+
+Default Configurations:
+
+```
+Typescript::Rails::Compiler.default_options = %w(--target ES5 --noImplicitAny)
+```
+
 
 ## Default Javascript Compilation
 
